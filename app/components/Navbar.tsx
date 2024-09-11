@@ -28,13 +28,13 @@ const Navbar = () => {
       <SignedOut>
         <Link
           href='/sign-in'
-          className='text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+          className='text-white dark:text-gray-300 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium bg-purple-600 hover:bg-purple-700 dark:bg-blue-600 dark:hover:bg-blue-700 transition-colors duration-200'
         >
           Sign in
         </Link>
         <Link
           href='/sign-up'
-          className='text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+          className='text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium border border-purple-600 dark:border-blue-600 hover:bg-purple-100 dark:hover:bg-blue-900 transition-colors duration-200'
         >
           Sign up
         </Link>
@@ -70,7 +70,6 @@ const Navbar = () => {
             <NavItems />
           </div>
           <div className='hidden md:flex items-center space-x-8'>
-            
             <SignedIn>
               <UserButton afterSignOutUrl='/' />
             </SignedIn>
