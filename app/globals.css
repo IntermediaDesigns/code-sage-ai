@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Account Avatar */
+.cl-avatarBox {
+  width: 50px;
+  height: 50px;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;

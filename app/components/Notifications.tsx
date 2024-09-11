@@ -11,11 +11,13 @@ import {
   PopoverTrigger,
 } from '../components/ui/popover';
 import { Id } from '@/convex/_generated/dataModel';
+import { useTheme } from 'next-themes';
 
 export default function Notifications({ userId }: { userId: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const notifications = useQuery(api.notifications.getUnreadNotifications, { userId });
   const markAsRead = useMutation(api.notifications.markNotificationAsRead);
+  const { theme } = useTheme();
 
   const handleMarkAsRead = async (id: Id<"notifications">) => {
     await markAsRead({ id });
@@ -25,7 +27,7 @@ export default function Notifications({ userId }: { userId: string }) {
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
         <Button variant="outline" className="relative">
-          <Bell className="h-5 w-5" />
+          <Bell className={`h-5 w-5 ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
           {notifications && notifications.length > 0 && (
             <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">
               {notifications.length}
@@ -33,17 +35,17 @@ export default function Notifications({ userId }: { userId: string }) {
           )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-80">
+      <PopoverContent className="w-auto mr-4 mt-4">
         <div className="grid gap-4">
           <div className="space-y-2">
-            <h4 className="font-medium leading-none">Notifications</h4>
+            <h4 className="font-bold text-xl leading-none">Notifications</h4>
             {notifications && notifications.length > 0 ? (
               notifications.map((notification) => (
                 <div key={notification._id} className="flex items-center justify-between">
-                  <p>{notification.content}</p>
+                  <p className='mr-2'>{notification.content}</p>
                   <Button
                     variant="ghost"
-                    size="sm"
+                    size="lg"
                     onClick={() => handleMarkAsRead(notification._id)}
                   >
                     Mark as read
