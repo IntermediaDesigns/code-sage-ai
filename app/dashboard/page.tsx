@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { Button } from '../components/ui/button'
 import { TrashIcon } from 'lucide-react'
 import { Toaster, toast } from 'react-hot-toast'
+import { Id } from '@/convex/_generated/dataModel'
 
 export default function DashboardPage () {
   const { isLoaded, userId } = useAuth()
@@ -60,7 +61,7 @@ export default function DashboardPage () {
   )
 }
 
-function CodeSnippetList ({ userId }: { userId: string }) {
+function CodeSnippetList({ userId }: { userId: string }) {
   const codeSnippets = useQuery(api.codeSnippets.getCodeSnippets, {
     userId: userId || ''
   })
@@ -83,7 +84,7 @@ function CodeSnippetList ({ userId }: { userId: string }) {
     )
   }
 
-  const handleDelete = (snippetId: string) => {
+  const handleDelete = (snippetId: Id<"codeSnippets">) => {
     toast(
       t => (
         <div className='dark:text-gray-200'>
