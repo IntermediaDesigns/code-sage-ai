@@ -8,7 +8,7 @@ export default defineSchema({
     language: v.string(),
     content: v.string(),
     createdAt: v.number(),
-    analysis: v.string(),
+    analysis: v.optional(v.string()), // Make analysis optional
   }),
   reviews: defineTable({
     snippetId: v.string(),

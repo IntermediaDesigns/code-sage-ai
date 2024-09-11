@@ -64,7 +64,7 @@ export default function SubmitCodePage () {
         content: code,
         analysis: data.analysis
       })
-
+      console.log('Snippet created with ID:', snippetId);
       setSubmittedSnippetId(snippetId)
 
       // Create a notification with a link to the snippet
@@ -131,9 +131,9 @@ export default function SubmitCodePage () {
         </Button>
       </form>
       {analysis && (
-        <div className='mt-8'>
+        <div className='mt-8 mb-24'>
           <h2 className='text-2xl font-bold mb-4'>AI Analysis</h2>
-          <pre className='bg-gray-100 p-4 rounded-md whitespace-pre-wrap'>
+          <pre className='bg-gray-100 p-4 rounded-md whitespace-pre-wrap text-black'>
             {analysis}
           </pre>
           {submittedSnippetId && (

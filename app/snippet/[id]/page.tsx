@@ -23,12 +23,12 @@ export default function SnippetDetailPage () {
   }
 
   return (
-    <div className='max-w-4xl mx-auto px-4 py-8'>
-      <h1 className='text-3xl font-bold mb-6'>{snippet.title}</h1>
-      <div className='mb-4'>
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">{snippet.title}</h1>
+      <div className="mb-4">
         <strong>Language:</strong> {snippet.language}
       </div>
-      <div className='mb-8'>
+      <div className="mb-8">
         <CodeEditor
           language={snippet.language}
           value={snippet.content}
@@ -36,12 +36,16 @@ export default function SnippetDetailPage () {
           readOnly
         />
       </div>
-      {snippet.analysis && (
-        <div className='mt-8'>
-          <h2 className='text-2xl font-bold mb-4'>AI Analysis</h2>
-          <pre className='bg-gray-100 p-4 rounded-md whitespace-pre-wrap'>
+      {snippet.analysis ? (
+        <div className="mt-8">
+          <h2 className="text-2xl font-bold mb-4">AI Analysis</h2>
+          <pre className="bg-gray-100 p-4 rounded-md whitespace-pre-wrap text-black">
             {snippet.analysis}
           </pre>
+        </div>
+      ) : (
+        <div className="mt-8">
+          <p>No AI analysis available for this snippet.</p>
         </div>
       )}
     </div>

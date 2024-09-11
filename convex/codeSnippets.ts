@@ -7,13 +7,14 @@ export const createCodeSnippet = mutation({
     title: v.string(),
     language: v.string(),
     content: v.string(),
-    analysis: v.string(),
+    analysis: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     const codeSnippetId = await ctx.db.insert("codeSnippets", {
       ...args,
       createdAt: Date.now(),
     });
+    console.log('Code snippet created with ID:', codeSnippetId);
     return codeSnippetId;
   },
 });
@@ -21,11 +22,13 @@ export const createCodeSnippet = mutation({
 export const getCodeSnippets = query({
   args: { userId: v.string() },
   handler: async (ctx, args) => {
-    return await ctx.db
+    const snippets = await ctx.db
       .query("codeSnippets")
       .filter((q) => q.eq(q.field("userId"), args.userId))
       .order("desc")
-      .take(10);
+      .take(100);
+    console.log('Retrieved snippets:', snippets.length);
+    return snippets;
   },
 });
 
