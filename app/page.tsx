@@ -74,7 +74,7 @@ export default function Home() {
 
 function FeatureCard({ title, description, icon }: { title: string, description: string, icon: JSX.Element }) {
   return (
-    <Card className="hover:shadow-lg transition-shadow duration-300">
+    <Card className="hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-xl">
           {icon}
