@@ -6,6 +6,7 @@ interface CodeEditorProps {
   value: string;
   onChange: (value: string | undefined) => void;
   readOnly?: boolean;
+  theme?: string;
 }
 
 const CodeEditor: React.FC<CodeEditorProps> = ({ language, value, onChange, readOnly }) => {
