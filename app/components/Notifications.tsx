@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '@/convex/_generated/api';
@@ -8,13 +10,14 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '../components/ui/popover';
+import { Id } from '@/convex/_generated/dataModel';
 
 export default function Notifications({ userId }: { userId: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const notifications = useQuery(api.notifications.getUnreadNotifications, { userId });
   const markAsRead = useMutation(api.notifications.markNotificationAsRead);
 
-  const handleMarkAsRead = async (id: string) => {
+  const handleMarkAsRead = async (id: Id<"notifications">) => {
     await markAsRead({ id });
   };
 

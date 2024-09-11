@@ -1,9 +1,11 @@
+'use client';
+
 import Link from 'next/link';
-import { SignedIn, SignedOut, UserButton, useAuth } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 import Notifications from './Notifications';
 
 const Navbar = () => {
-  const { userId } = useAuth();
+  const { user } = useUser();
 
   return (
     <nav className="bg-white shadow-lg">
@@ -27,7 +29,7 @@ const Navbar = () => {
               <Link href="/dashboard" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
                 Dashboard
               </Link>
-              {userId && <Notifications userId={userId} />}
+              {user && <Notifications userId={user.id} />}
               <UserButton afterSignOutUrl="/" />
             </SignedIn>
           </div>

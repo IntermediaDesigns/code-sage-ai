@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/clerk-react": "^5.8.1",
     "@clerk/nextjs": "^5.5.1",
     "@google/generative-ai": "^0.17.2",
     "@monaco-editor/react": "^4.6.0",
@@ -23,6 +24,7 @@
     "next": "14.2.9",
     "react": "^18",
     "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
     "shadcn": "^2.0.5",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"

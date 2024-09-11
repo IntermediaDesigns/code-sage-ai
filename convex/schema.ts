@@ -1,5 +1,5 @@
-import { defineSchema, defineTable } from 'convex/server'
-import { v } from 'convex/values'
+import { defineSchema, defineTable } from "convex/server";
+import { v } from "convex/values";
 
 export default defineSchema({
   codeSnippets: defineTable({
@@ -7,19 +7,19 @@ export default defineSchema({
     title: v.string(),
     language: v.string(),
     content: v.string(),
-    createdAt: v.number()
+    createdAt: v.number(),
+    analysis: v.string(),
   }),
   reviews: defineTable({
-    codeSnippetId: v.id('codeSnippets'),
+    snippetId: v.string(),
     userId: v.string(),
     content: v.string(),
-    aiSuggestions: v.string(),
-    createdAt: v.number()
+    createdAt: v.number(),
   }),
   notifications: defineTable({
     userId: v.string(),
     content: v.string(),
     read: v.boolean(),
-    createdAt: v.number()
-  })
-})
+    createdAt: v.number(),
+  }),
+});

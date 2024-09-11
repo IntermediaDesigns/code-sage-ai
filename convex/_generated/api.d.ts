@@ -14,6 +14,7 @@ import type {
   FunctionReference,
 } from "convex/server";
 import type * as codeSnippets from "../codeSnippets.js";
+import type * as notifications from "../notifications.js";
 import type * as reviews from "../reviews.js";
 
 /**
@@ -26,6 +27,7 @@ import type * as reviews from "../reviews.js";
  */
 declare const fullApi: ApiFromModules<{
   codeSnippets: typeof codeSnippets;
+  notifications: typeof notifications;
   reviews: typeof reviews;
 }>;
 export declare const api: FilterApi<

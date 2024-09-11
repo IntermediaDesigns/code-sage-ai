@@ -7,6 +7,7 @@ export const createCodeSnippet = mutation({
     title: v.string(),
     language: v.string(),
     content: v.string(),
+    analysis: v.string(),
   },
   handler: async (ctx, args) => {
     const codeSnippetId = await ctx.db.insert("codeSnippets", {
@@ -29,8 +30,24 @@ export const getCodeSnippets = query({
 });
 
 export const getCodeSnippet = query({
-  args: { id: v.string() },
+  args: { id: v.id("codeSnippets") },
   handler: async (ctx, args) => {
-    return await ctx.db.get(args.id);
+    const snippet = await ctx.db.get(args.id);
+    if (!snippet) {
+      throw new Error("Code snippet not found");
+    }
+    return snippet;
+  },
+});
+
+export const deleteCodeSnippet = mutation({
+  args: { id: v.id("codeSnippets") },
+  handler: async (ctx, args) => {
+    const { id } = args;
+    const existing = await ctx.db.get(id);
+    if (!existing) {
+      throw new Error("Code snippet not found");
+    }
+    await ctx.db.delete(id);
   },
 });

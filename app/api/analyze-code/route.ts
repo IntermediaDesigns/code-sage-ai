@@ -7,7 +7,11 @@ export async function POST(req: Request) {
   try {
     const { code, language } = await req.json();
 
-    const model = genAI.getGenerativeModel({ model: "gemini-4o-mini" });
+    if (!code || !language) {
+      return NextResponse.json({ error: 'Missing code or language' }, { status: 400 });
+    }
+
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
     const prompt = `Analyze the following ${language} code and provide suggestions for improvement, potential bugs, and best practices:
 

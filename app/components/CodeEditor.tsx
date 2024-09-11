@@ -5,9 +5,10 @@ interface CodeEditorProps {
   language: string;
   value: string;
   onChange: (value: string | undefined) => void;
+  readOnly?: boolean;
 }
 
-const CodeEditor: React.FC<CodeEditorProps> = ({ language, value, onChange }) => {
+const CodeEditor: React.FC<CodeEditorProps> = ({ language, value, onChange, readOnly }) => {
   return (
     <Editor
       height="400px"
@@ -21,7 +22,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ language, value, onChange }) =>
         lineNumbers: 'on',
         roundedSelection: false,
         scrollBeyondLastLine: false,
-        readOnly: false,
+        readOnly: readOnly,
       }}
     />
   );
