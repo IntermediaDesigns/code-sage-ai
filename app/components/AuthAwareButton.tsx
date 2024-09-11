@@ -12,14 +12,14 @@ export function AuthAwareButton() {
 
   if (isSignedIn) {
     return (
-      <Button asChild size="lg">
+      <Button asChild size="lg" className='hover:scale-105'>
         <Link href="/dashboard">Go to Dashboard</Link>
       </Button>
     );
   }
 
   return (
-    <Button asChild size="lg">
+    <Button asChild size="lg" className='hover:scale-105'>
       <Link href="/sign-up">Get Started</Link>
     </Button>
   );
