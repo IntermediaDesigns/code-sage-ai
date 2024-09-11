@@ -47,6 +47,7 @@ export default function Notifications({ userId }: { userId: string }) {
                     variant="ghost"
                     size="lg"
                     onClick={() => handleMarkAsRead(notification._id)}
+                    className='mb-2 mt-2 bg-purple-600 hover:bg-purple-700 dark:bg-blue-600 dark:hover:bg-blue-700'
                   >
                     Mark as read
                   </Button>

@@ -108,10 +108,17 @@ export default function SubmitCodePage() {
               <SelectValue placeholder='Select a language' />
             </SelectTrigger>
             <SelectContent className='bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100'>
-              <SelectItem value='javascript'>JavaScript</SelectItem>
-              <SelectItem value='python'>Python</SelectItem>
-              <SelectItem value='java'>Java</SelectItem>
+              <SelectItem value='c++'>C++</SelectItem>
               <SelectItem value='csharp'>C#</SelectItem>
+              <SelectItem value='css'>CSS</SelectItem>
+              <SelectItem value='go'>Go</SelectItem>
+              <SelectItem value='html'>HTML</SelectItem>
+              <SelectItem value='java'>Java</SelectItem>
+              <SelectItem value='javascript'>JavaScript</SelectItem>
+              <SelectItem value='php'>PHP</SelectItem>
+              <SelectItem value='python'>Python</SelectItem>
+              <SelectItem value='ruby'>Ruby</SelectItem>
+              <SelectItem value='typescript'>TypeScript</SelectItem>
             </SelectContent>
           </Select>
           <div className='border border-gray-300 dark:border-gray-700 rounded-md'>
