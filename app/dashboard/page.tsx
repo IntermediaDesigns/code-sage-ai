@@ -35,7 +35,7 @@ export default function DashboardPage () {
   return (
     <>
       <Toaster />
-      <div className='min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100'>
+      <div className='min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 dark:from-gray-900 dark:to-blue-900 text-gray-900 dark:text-gray-100'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
           <div className='flex justify-between items-center mb-6'>
             <h1 className='text-3xl font-bold'>Your Dashboard</h1>
@@ -87,12 +87,12 @@ function CodeSnippetList({ userId }: { userId: string }) {
   const handleDelete = (snippetId: Id<"codeSnippets">) => {
     toast(
       t => (
-        <div className='dark:text-gray-200'>
+        <div className='dark:text-gray-800'>
           <p>Are you sure you want to delete this code snippet?</p>
           <div className='mt-2'>
             <Button
               size='sm'
-              variant='destructive'
+              className='bg-red-600 hover:bg-red-700 text-white'
               onClick={async () => {
                 toast.dismiss(t.id)
                 try {

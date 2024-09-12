@@ -16,15 +16,15 @@ export default function SnippetDetailPage() {
   })
 
   if (snippet === undefined) {
-    return <div className="flex items-center justify-center h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">Loading...</div>
+    return <div className="flex items-center justify-center h-screen bg-gradient-to-b from-blue-100 to-purple-100 dark:from-gray-900 dark:to-blue-900 text-gray-900 dark:text-gray-100">Loading...</div>
   }
 
   if (snippet === null) {
-    return <div className="flex items-center justify-center h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">Snippet not found</div>
+    return <div className="flex items-center justify-center h-screen bg-gradient-to-b from-blue-100 to-purple-100 dark:from-gray-900 dark:to-blue-900 text-gray-900 dark:text-gray-100">Snippet not found</div>
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 dark:from-gray-900 dark:to-blue-900 text-gray-900 dark:text-gray-100">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-6">{snippet.title}</h1>
         <div className="mb-4">

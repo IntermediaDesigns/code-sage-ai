@@ -83,7 +83,7 @@ export default function SubmitCodePage() {
   }
 
   return (
-    <div className='min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100'>
+    <div className='min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 dark:from-gray-900 dark:to-blue-900 text-gray-900 dark:text-gray-100'>
       <div className='max-w-4xl mx-auto px-4 py-8'>
         <h1 className='text-3xl font-bold mb-6'>Submit Code for Review</h1>
         {error && (
