@@ -144,10 +144,10 @@ export default function SubmitCodePage() {
             </pre>
             {submittedSnippetId && (
               <Button
-                onClick={() => router.push(`/snippet/${submittedSnippetId}`)}
+                onClick={() => router.push(`/dashboard`)}
                 className='mt-4 bg-purple-600 hover:bg-purple-700 dark:bg-blue-600 dark:hover:bg-blue-700'
               >
-                View Submitted Snippet
+                Back to Dashboard
               </Button>
             )}
           </div>
