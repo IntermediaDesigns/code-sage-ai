@@ -1,5 +1,3 @@
-Here's the converted GitHub README:
-
 # Code Sage AI: AI-Assisted Code Review Platform
 
 Code Sage AI is a web application that provides developers with AI-powered code reviews and a platform for managing and sharing code snippets. The application is built using Next.js, Convex for backend functionality, and Clerk for authentication.
@@ -56,15 +54,3 @@ Code Sage AI is a web application that provides developers with AI-powered code 
 - **Code Editor**: Monaco Editor
 - **State Management**: React hooks and Convex's built-in state management
 - **Notifications**: react-hot-toast for user-friendly toast notifications
-
-## Getting Started
-
-(Add instructions for setting up and running the project locally)
-
-## Contributing
-
-(Add guidelines for contributing to the project)
-
-## License
-
-(Add license information)
